@@ -1,5 +1,6 @@
 import React from "react";
 import style from './Cart.module.css'
+import Modal from "../store/Modal";
 
 function Cart() {
   const cartitem = (
@@ -18,7 +19,7 @@ function Cart() {
   );
 
   return (
-    <div>
+    <Modal>
       {cartitem}
       <div className={style.total}>
         <span>Total Amount</span>
@@ -28,7 +29,7 @@ function Cart() {
         <button className={style.button_alt}>Close</button>
         <button className={style.button}>Order</button>
       </div>
-    </div>
+      </Modal>
   );
 }
 

@@ -3,6 +3,7 @@
   }
   
   .form button {
+    margin-top: .5rem;
     font: inherit;
     cursor: pointer;
     background-color: #8a2b06;
