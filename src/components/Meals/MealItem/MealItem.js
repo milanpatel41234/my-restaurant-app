@@ -13,18 +13,16 @@ const ChangeAmount=(e)=>{
 const ctx = useContext(CartContext)
 const HandleSubmit =(e)=>{
   e.preventDefault()
-  if (Amount > 0) {
+  if (+Amount > 0) {
     const item = {
       name:props.name,
       price:props.price,
       id:props.id,
-      amount:Amount,
+      amount:Number.parseInt(Amount),
     }
     ctx.addItem(item)
    
-  } else {
-    
-  }
+  } 
 }
 
   return (
