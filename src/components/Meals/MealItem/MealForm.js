@@ -3,19 +3,20 @@ import Input from '../../store/Input'
 import style from './MealForm.module.css'
 
 
-function MealForm() {
+function MealForm(props) {
   
   return (
-   <form className={style.form}>
+   <form onSubmit={props.onSubmit} className={style.form}>
     <Input input={{
         id: 'amount',
         type: 'number',
         min: '1',
-        max: '5',
+        max: '9',
         step: '1',
-        defaultValue: '1',
+        value: props.value,
+        onChange:props.onChange
     }}/>
-    <button>+ Add</button>
+    <button value='Submit'>+ Add</button>
    </form>
   )
 }

@@ -8,16 +8,12 @@ function Header(props) {
     <Fragment>
       <header className={style.header}>
         <h2>Your-Meals</h2>
-       <HeaderCart ShowCart={props.ShowCart}/>
+       <HeaderCart items={props.items}  ShowCart={props.ShowCart}/>
       </header>
       <div className={style.image}>
         <img src={img} alt='Our food images'/>
       </div>
-    <div >
-      
-    
-
-    </div>
+  
     </Fragment>
   )
 }
