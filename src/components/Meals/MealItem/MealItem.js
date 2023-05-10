@@ -6,9 +6,11 @@ import CartContext from '../../store/Cart-Context';
 function MealItem(props) {
 const Price = `Rs ${props.price.toFixed(2)}`
 const [Amount, setAmount] = useState(1);
+const [Valid,setValid] = useState(true)
 
 const ChangeAmount=(e)=>{
   setAmount(e.target.value)
+
 }
 const ctx = useContext(CartContext)
 const HandleSubmit =(e)=>{
@@ -21,8 +23,12 @@ const HandleSubmit =(e)=>{
       amount:Number.parseInt(Amount),
     }
     ctx.addItem(item)
-   
-  } 
+  } else{
+    setValid(false);
+    setTimeout(()=>{
+      setValid(true);
+    },1000)
+  }
 }
 
   return (
@@ -32,7 +38,7 @@ const HandleSubmit =(e)=>{
      <div className={style.discription}>{props.discription}</div>
      <div className={style.price}>{Price}</div>
      </div>
-     <div><MealForm value={Amount} onChange={ChangeAmount} onSubmit={HandleSubmit}/></div>
+     <div><MealForm onValid={Valid} value={Amount} onChange={ChangeAmount} onSubmit={HandleSubmit}/></div>
       </li>
 
   )

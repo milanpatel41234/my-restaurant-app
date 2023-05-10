@@ -41,7 +41,7 @@ function Cart(props) {
       </div>
       <div className={style.actions}>
         <button className={style.button_alt} onClick={props.onClose} >Close</button>
-        <button className={style.button}>Order</button>
+       {ctx.totalAmount>0 && <button className={style.button}>Order</button>}
       </div>
       </Modal>
   );
